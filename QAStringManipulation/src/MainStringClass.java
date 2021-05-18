@@ -58,14 +58,15 @@ public class MainStringClass {
 		return "";
 	}
 	
+	// Says I have a problem. Not sure why
 	public static boolean findSubString(String str1, String str2) {
 		boolean bool = false;
-		for(int i = 0; i < str1.length(); i++) {
-//			if(str1.substring(i, i+1).equals(str2.substring(0, 1))) {
-			if(str1.substring(i, i+str2.length()).equals(str2.substring(0, str2.length()))) {
-				bool = true;
+		for(int i = 0; i < str1.length() - str2.length()+1; i++) {
+			if(str1.substring(i, i+1).equals(str2.substring(0, 1))) {
+				if(str1.substring(i, i+str2.length()).equals(str2.substring(0, str2.length()))) {
+					bool = true;
+				}
 			}
-//			}
 		}
 		return bool;
 	}
